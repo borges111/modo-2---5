@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Balas</title>
+</head>
+
+<body>
+    <h1>Calculadora de Balas</h1>
+    <input type="text" id="balas">
+    <input type="text" id="crianca">
+    <span id="resultado"></span>
+    <button onclick="calcular()">CALCULAR</button>
+    <script>
+        function calcular() {
+            const balas = document.getElementById("balas").value
+            const crianca = document.getElementById("crianca").value
+            try {
+                if (balas <= 0) throw "O valor das balas é inválido!!"
+
+            } catch (error) {
+                document.getElementById("resultado").innerHTML = ""
+                throw new Error("O valor das balas é inválido!!")
+            }
+            document.getElementById("resultado").innerHTML = balas / crianca
+        }
+    </script>
+</body>
+
+</html>

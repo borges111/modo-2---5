@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="meuInput">
+    <span id="meuSpan"></span>
+    <button onclick="verificarValor()">VERIFICAR</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    function verificarValor() {
+        const meuInput = $("#meuInput").val()
+        try {
+            if (isNaN(meuInput) !== false) throw "valor inválido digite um numero"
+        } catch (error) {
+            $("#meuSpan").text("Erro, o valor nao e um numero!")
+            throw new Error(error)
+        }
+        if (meuInput % 2 === 0) {
+            $("#meuSpan").text("E PAR!")
+        }
+        else {
+            $("#meuSpan").text("E IMPAR!")
+        }
+    }
+</script>
+
+</html>
